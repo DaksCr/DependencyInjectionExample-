@@ -1,0 +1,7 @@
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Domain\bin\Debug\Sapiens.Domain.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Domain\bin\Debug\Sapiens.Domain.pdb
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Domain\bin\Debug\Sapiens.Core.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Domain\bin\Debug\Sapiens.Core.pdb
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Domain\obj\Debug\Sapiens.Domain.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Domain\obj\Debug\Sapiens.Domain.pdb

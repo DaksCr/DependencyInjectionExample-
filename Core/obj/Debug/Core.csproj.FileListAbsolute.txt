@@ -1,0 +1,5 @@
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Core\bin\Debug\Sapiens.Core.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Core\bin\Debug\Sapiens.Core.pdb
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Core\obj\Debug\Sapiens.Core.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Core\obj\Debug\Sapiens.Core.pdb

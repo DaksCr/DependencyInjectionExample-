@@ -1,0 +1,17 @@
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\Sapiens.Web.Model.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\Sapiens.Web.Model.pdb
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\Sapiens.Core.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\Sapiens.Domain.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\System.Web.Helpers.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\System.Web.Mvc.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\System.Web.WebPages.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\Sapiens.Core.pdb
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\Sapiens.Domain.pdb
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\System.Web.Helpers.xml
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\System.Web.Mvc.xml
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\System.Web.WebPages.xml
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\obj\Debug\Web.Model.csprojResolveAssemblyReference.cache
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\obj\Debug\Sapiens.Web.Model.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Web.Model\obj\Debug\Sapiens.Web.Model.pdb

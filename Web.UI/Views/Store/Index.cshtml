@@ -1,0 +1,214 @@
+﻿@model StoreViewModel
+
+@{
+    ViewBag.Title = "Tienda";
+}
+<div class="row">
+    <div class="col-xs-7">
+        <div class="panel panel-default">
+            <div class="panel-heading"><i class="fa fa-th-list"></i> Productos</div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                @foreach (Product product in this.Model.Products)
+                {
+                    <tr>
+                        <td>@product.Name</td>
+                        <td>@product.Description</td>
+                        <td>$@product.Price</td>
+                        <td>
+                            <form method="post" action="@this.Url.Action("SetItem")">
+                                <input type="hidden" name="cartId" value="@this.Model.Cart.Id" />
+                                <input type="hidden" name="productId" value="@product.Id" />
+                                <input type="hidden" name="referrer" value="@this.Model.Cart.Referrer" />
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <input class="form-control" type="number" name="quantity" required min="1" />
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <button type="submit" class="btn btn-default">
+                                            <i class="fa fa-angle-double-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="col-xs-5">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-shopping-cart"></i> Carrito
+                    @if (this.Model.Cart.Referrer.IsNotNullOrEmpty())
+                    {
+                        <span class="label label-info pull-right">@this.Model.Cart.Referrer</span>
+                    }
+                </div>
+                @if(this.Model.Cart.IsEmpty)
+                {
+                    <div class="panel-body">
+                        <h6>Agregue Productos al Carrito! :)</h6>
+                    </div>
+                }
+                else
+                {
+                    <div class="list-group">
+                        @foreach (CartItem item in this.Model.Cart.Items)
+                        {
+                            <div class="list-group-item">
+                                <div class="row">
+                                    <div class="col-xs-7">
+                                        @item.Description
+                                    </div>
+                                    <div class="col-xs-3 text-center">
+                                        x @item.Quantity <em>$@item.UnitPrice</em>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <form method="post" action="@this.Url.Action("RemoveItem")">
+                                            <input type="hidden" name="cartId" value="@this.Model.Cart.Id" />
+                                            <input type="hidden" name="itemId" value="@item.Id" />
+                                            <input type="hidden" name="referrer" value="@this.Model.Cart.Referrer" />
+                                            <button type="submit" class="btn btn-default btn-sm">
+                                                <i class="fa fa-close"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="panel-footer">
+                        <form method="post" action="@this.Url.Action("Index")">
+                            <input type="hidden" name="cartId" value="@this.Model.Cart.Id" />
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <input type="text" name="promo" placeholder="Promo" class="form-control" />
+                                </div>
+                                <div class="col-xs-4">
+                                    <button type="submit" class="btn btn-default">
+                                        <i class="fa fa-money"></i>Cotizar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                }
+            </div>
+            @if (this.Model.HasReceipt)
+            {
+                <div class="panel panel-info">
+                    <div class="panel-heading"><i class="fa fa-money"></i> Cotizacion</div>
+                    <div class="list-group">
+                        @foreach (CartItem item in this.Model.Receipt.Items)
+                        {
+                            <div class="list-group-item">
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        @item.Description ($@item.UnitPrice) x @item.Quantity
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <em>$@item.Total</em>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        @foreach (Discount discount in this.Model.Receipt.Discounts)
+                        {
+                            <div class="list-group-item">
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        @discount.Description
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <em>$@discount.Amount</em>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        @foreach (Tax tax in this.Model.Receipt.Taxes)
+                        {
+                            <div class="list-group-item">
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        @tax.Description
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <em>$@tax.Amount</em>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        @if (this.Model.Receipt.Items.Any())
+                        {
+                            <div class="list-group-item">
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        Subtotal de Productos (x @this.Model.Receipt.Items.Count())
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <em>$@this.Model.Receipt.ItemsTotal</em>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        @if (this.Model.Receipt.Discounts.Any())
+                        {
+                            <div class="list-group-item">
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        Subtotal de Descuentos (x @this.Model.Receipt.Discounts.Count())
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        -<em>$@this.Model.Receipt.DiscountTotal</em>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        @if (this.Model.Receipt.Taxes.Any())
+                        {
+                            <div class="list-group-item">
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        Subtotal de Impuestos (x @this.Model.Receipt.Taxes.Count())
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        +<em>$@this.Model.Receipt.TaxTotal</em>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        <div class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <b>Gran Total</b>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <b><em>$@this.Model.Receipt.Total</em></b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+

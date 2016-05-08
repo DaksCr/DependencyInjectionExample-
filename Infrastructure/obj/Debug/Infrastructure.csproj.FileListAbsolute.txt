@@ -1,0 +1,8 @@
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Infrastructure\bin\Debug\Sapiens.Infrastructure.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Infrastructure\bin\Debug\Sapiens.Infrastructure.pdb
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Infrastructure\bin\Debug\Sapiens.Core.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Infrastructure\bin\Debug\Sapiens.Domain.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Infrastructure\bin\Debug\Sapiens.Core.pdb
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Infrastructure\bin\Debug\Sapiens.Domain.pdb
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Infrastructure\obj\Debug\Sapiens.Infrastructure.dll
+C:\Users\alchr\Documents\Software\DependencyInjectionExample\Infrastructure\obj\Debug\Sapiens.Infrastructure.pdb
